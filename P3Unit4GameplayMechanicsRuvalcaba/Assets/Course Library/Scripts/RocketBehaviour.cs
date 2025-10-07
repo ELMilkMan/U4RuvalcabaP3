@@ -16,17 +16,30 @@ public class RocketBehaviour : MonoBehaviour
     {
         if(homing && target != null)
         {
-            Vector3 movedirection = (target.transform.position - transform.position).normalized;
-            transform.position += movedirection * speed * Time.deltaTime;
-            transform.position += movedirection * speed * Time.deltaTime;
+            Vector3 moveDirection = (target.transform.position - transform.position).normalized;
+            transform.position += moveDirection * speed * Time.deltaTime;
             transform.LookAt(target);
         }
     }
 
-    public void Fire(Transform newtarget)
+    public void Fire(Transform newTarget)
     {
-        target = homingTarget;
+        target = newTarget;
         homing = true;
         Destroy(gameObject, aliveTimer);
+    }
+
+    private void OnCollisionEnter(Collision col)
+    {
+        if (target != null)
+        {
+            if (col.gameObject.CompareTag(target.tag))
+            {
+                Rigidbody targetRigidbody = col.gameObject.GetComponent<Rigidbody>();
+                Vector3 away = -col.contacts[0].normal;
+                targetRigidbody.AddForce(away * rocketStrength, ForceMode.Impulse);
+                Destroy(gameObject);
+            }
+        }
     }
 }

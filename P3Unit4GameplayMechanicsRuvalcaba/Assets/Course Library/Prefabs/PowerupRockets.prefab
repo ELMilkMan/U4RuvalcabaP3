@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 4273318084823400571}
   - component: {fileID: 7172669820800091135}
   - component: {fileID: 4858448905425488007}
-  - component: {fileID: -639792500498440673}
+  - component: {fileID: 7301655712490042563}
   m_Layer: 0
-  m_Name: Powerup
+  m_Name: PowerupRockets
   m_TagString: Powerup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109,7 +109,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.3181021, y: 0.57080644, z: 0.2754844}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-639792500498440673
+--- !u!114 &7301655712490042563
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,4 +121,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe202cae247b2de4db23e12439451e1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerUpType: 1
+  powerUpType: 2

@@ -3,20 +3,17 @@ using UnityEngine;
 public class PowerUp : MonoBehaviour
 {
     public enum PowerUpType { None, Pushback, Rockets }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    public PowerUpType powerUpType; // holds which type this power-up is
+
     void Start()
     {
-        
+        // Optional: you could initialize something here if needed
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    public class PowerUp : MonoBehaviour
-    {
-        public PowerUpType;
+        // Optional: spin the power-up, or make it move, etc.
     }
 }
+
